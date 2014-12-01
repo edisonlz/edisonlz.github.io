@@ -38,7 +38,7 @@ tcpflow -c -p -i eth0 dst port 11211 and dst host 10.x.x.x|grep ‘x.x.x.x.11211
 </p>
             <p>2. 跟进key的数量排序
 awk -F ‘:’ ‘{print $2}’ a.txt|sort |uniq -c|sort -rn|head -n 10</p>
-            <p>3 grep key 看看流量来自那组服务器
+            <p>3. grep key 看看流量来自那组服务器
 tcpflow -c -p -i eth0 src port 11211 and src host 10.x.x.x|grep ’3478a3c3659f313e42d809d5′#火影忍者</p>
     </section>
 
