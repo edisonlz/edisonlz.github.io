@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
@@ -25,6 +28,39 @@
 </header>
 
 <div class="container">
+
+
+        <section id="main7">
+            <h3>memcache 流量激增，抓包检测方式</h3>
+        <p>
+        1. 使用tcpflow抓包
+tcpflow -c -p -i eth0 dst port 11211 and dst host 10.x.x.x|grep ‘x.x.x.x.11211:’ > a.txt
+</p>
+            <p>2. 跟进key的数量排序
+awk -F ‘:’ ‘{print $2}’ a.txt|sort |uniq -c|sort -rn|head -n 10</p>
+            <p>3 grep key 看看流量来自那组服务器
+tcpflow -c -p -i eth0 src port 11211 and src host 10.x.x.x|grep ’3478a3c3659f313e42d809d5′#火影忍者</p>
+    </section>
+
+        <section id="main6">
+            <h3>要做文艺的程序员!</h3>
+        <p>
+        他们抛下我，或许是因为我们世界观不同。可我连世界都没观过，哪来的世界观？
+于是我决定驱车上路，一路走来，那些天真和懵懂，早已被我抛在脑后。
+我想和这个世界谈谈，于是，我拿起了笔，将过往的日子，一一写下。
+这一刻，我回忆起那天被他们遗弃时的寒冷，便给自己取了个笔名，寒寒。
+我跨过一座又一座城池，走过命运的三重门。我经历过告白与告别，也遭受过嘲笑与谩骂。
+在驻足的瞬间，我终于领悟到，我只不过像你像他，像那野草野花。
+所以我给女儿起名叫小野，我不奢求她大富大贵，
+只希望她能平平安安脚踏实地，不要被一些拜金的世界观所左右。
+经历了人生的大起大落，现在的我，终于踏上了一条平凡之路，与过去，后会无期。
+        </p>
+    </section>
+
+     <section id="main5">
+        <h3>&lt;&lt;魔兽世界&gt;&gt;</h3>
+        <img src="images/war.png" />
+    </section>
 
     <section id="main4">
         <h3>团队内部讨论&lt;&lt;穿越星际&gt;&gt;</h3>
