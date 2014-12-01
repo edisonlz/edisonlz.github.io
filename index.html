@@ -57,12 +57,12 @@ ppt下载 ：http://pan.baidu.com/s/1sj53HrJ
             <h3>memcache 流量激增，抓包检测方式</h3>
         <p>
         1. 使用tcpflow抓包
-tcpflow -c -p -i eth0 dst port 11211 and dst host 10.x.x.x|grep ‘x.x.x.x.11211:’ > a.txt
+<code>tcpflow -c -p -i eth0 dst port 11211 and dst host 10.x.x.x|grep ‘x.x.x.x.11211:’ > a.txt</code>
 </p>
             <p>2. 跟进key的数量排序
-awk -F ‘:’ ‘{print $2}’ a.txt|sort |uniq -c|sort -rn|head -n 10</p>
+<code>awk -F ‘:’ ‘{print $2}’ a.txt|sort |uniq -c|sort -rn|head -n 10 </code></p>
             <p>3. grep key 看看流量来自那组服务器
-tcpflow -c -p -i eth0 src port 11211 and src host 10.x.x.x|grep ’3478a3c3659f313e42d809d5′#火影忍者</p>
+<code>tcpflow -c -p -i eth0 src port 11211 and src host 10.x.x.x|grep ’3478a3c3659f313e42d809d5′#火影忍者<code></code></p>
     </section>
 
         <section id="main6">
