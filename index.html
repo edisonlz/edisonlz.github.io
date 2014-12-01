@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,8 +28,22 @@
 </header>
 
 <div class="container">
-    <section id="main6">
-        <h3>要做文艺的程序员!</h3>
+
+
+        <section id="main7">
+            <h3>memcache 流量激增，抓包检测方式</h3>
+        <p>
+        1. 使用tcpflow抓包
+tcpflow -c -p -i eth0 dst port 11211 and dst host 10.x.x.x|grep ‘x.x.x.x.11211:’ > a.txt
+</p>
+            <p>2. 跟进key的数量排序
+awk -F ‘:’ ‘{print $2}’ a.txt|sort |uniq -c|sort -rn|head -n 10</p>
+            <p>3 grep key 看看流量来自那组服务器
+tcpflow -c -p -i eth0 src port 11211 and src host 10.x.x.x|grep ’3478a3c3659f313e42d809d5′#火影忍者</p>
+    </section>
+
+        <section id="main6">
+            <h3>要做文艺的程序员!</h3>
         <p>
         他们抛下我，或许是因为我们世界观不同。可我连世界都没观过，哪来的世界观？
 于是我决定驱车上路，一路走来，那些天真和懵懂，早已被我抛在脑后。
